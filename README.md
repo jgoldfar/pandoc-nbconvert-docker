@@ -1,7 +1,8 @@
 # Pandoc Docker Container
 
+[![Docker Build Status](https://img.shields.io/docker/build/jgoldfar/pandoc-docker-bibtex.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/pandoc-docker-bibtex.svg)](https://hub.docker.com/r/jgoldfar/pandoc-docker-bibtex/)
+
 [Docker](https://www.docker.io/) container for the source distribution of [Pandoc](http://johnmacfarlane.net/pandoc), with Latex tools installed.
-Hub page: [here](https://hub.docker.com/r/jgoldfar/pandoc-docker-bibtex/)
 
     docker run jgoldfar/pandoc-docker-bibtex
 
@@ -36,21 +37,21 @@ $ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -f markdown -t html5
 
 ## Installed Packages
 
-| apt/LaTeX                    | Pandoc |
-| ---------------------------- | ------ |
-| make                         |
-| git                          |
-| ca-certificates              |
-| locales                      |
-| lmodern                      |
-| texlive-latex-base           |
-| texlive-fonts-recommended    |
-| texlive-generic-recommended  |
-| texlive-lang-english         |
-| latex-xcolor                 |
-| texlive-math-extra           |
-| texlive-latex-extra          |
-| texlive-bibtex-extra         |
-| biber                        |
-| fontconfig                   |
-| texlive-xetex                |
+| apt/LaTeX                    | Pandoc                   |
+| ---------------------------- | ------------------------ |
+| make                         | pandoc-2.3               |
+| git                          | pandoc-citeproc          |
+| ca-certificates              | pandoc-citeproc-preamble |
+| locales                      | pandoc-crossref          |
+| lmodern                      |                          |
+| texlive-latex-base           |                          |
+| texlive-fonts-recommended    |                          |
+| texlive-generic-recommended  |                          |
+| texlive-lang-english         |                          |
+| latex-xcolor                 |                          |
+| texlive-math-extra           |                          |
+| texlive-latex-extra          |                          |
+| texlive-bibtex-extra         |                          |
+| biber                        |                          |
+| fontconfig                   |                          |
+| texlive-xetex                |                          |
