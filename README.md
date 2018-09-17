@@ -1,8 +1,9 @@
 # Pandoc Docker Container
 
 [Docker](https://www.docker.io/) container for the source distribution of [Pandoc](http://johnmacfarlane.net/pandoc), with Latex tools installed.
+Hub page: [here](https://hub.docker.com/r/jgoldfar/pandoc-docker-bibtex/)
 
-    docker run jagregory/pandoc
+    docker run jgoldfar/pandoc-docker-bibtex
 
     pandoc [OPTIONS] [FILES]
     Input formats:  docbook, haddock, html, json, latex, markdown, markdown_github,
@@ -15,6 +16,41 @@
                     rst, rtf, s5, slideous, slidy, texinfo, textile
                     [*for pdf output, use latex or beamer and -o FILENAME.pdf
 
-A `/source` directory is created in the container, which can be mapped for use with relative file paths. Pandoc will always be run from the `/source` directory in the container.
+A `/source` directory is created in the container, which can be mapped for use with relative file paths.
+Pandoc will always be run from the `/source` directory in the container.
 
-    docker run -v `pwd`:/source jagregory/pandoc -f markdown -t html5 myfile.md -o myfile.html
+## Examples
+Generate HTML from Markdown
+```
+$ docker run --rm -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -o example.html example.md
+```
+
+Generate PDF from Markdown
+```
+$ docker run --rm -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -o example.pdf example.md
+```
+
+```
+$ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -f markdown -t html5 myfile.md -o myfile.html
+```
+
+## Installed Packages
+
+| apt/LaTeX                    | Pandoc |
+| ---------------------------- | ------ |
+| make                         |
+| git                          |
+| ca-certificates              |
+| locales                      |
+| lmodern                      |
+| texlive-latex-base           |
+| texlive-fonts-recommended    |
+| texlive-generic-recommended  |
+| texlive-lang-english         |
+| latex-xcolor                 |
+| texlive-math-extra           |
+| texlive-latex-extra          |
+| texlive-bibtex-extra         |
+| biber                        |
+| fontconfig                   |
+| texlive-xetex                |
