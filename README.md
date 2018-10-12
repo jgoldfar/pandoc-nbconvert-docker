@@ -31,8 +31,14 @@ Generate PDF from Markdown
 $ docker run --rm -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -o example.pdf example.md
 ```
 
+Generate HTML5 (Explicitly) from a Markdown file
 ```
 $ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -f markdown -t html5 myfile.md -o myfile.html
+```
+
+Generate HTML + MathJaX from a LaTeX file
+```
+$ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex --from latex+raw_tex --to html5 --mathjax fileIn.tex -o fileOut.html
 ```
 
 ## Installed Packages
@@ -55,3 +61,4 @@ $ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex -f markdown -t html5
 | biber                        |                          |
 | fontconfig                   |                          |
 | texlive-xetex                |                          |
+| imagemagick                  |                          |

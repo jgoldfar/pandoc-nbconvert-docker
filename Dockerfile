@@ -18,7 +18,8 @@ RUN apt-get update -y && \
     texlive-fonts-extra \
     texlive-bibtex-extra \
     fontconfig \
-    lmodern && \
+    lmodern \
+    imagemagick && \
     apt-get autoclean && apt-get --purge --yes autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
