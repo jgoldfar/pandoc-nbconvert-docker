@@ -51,6 +51,9 @@ ENV LC_ALL en_US.UTF-8
 # directory available to pandoc
 WORKDIR /source
 
+# Expose /source as an external volume
+VOLUME /source
+
 ENTRYPOINT ["/root/.cabal/bin/pandoc"]
 
 CMD ["--help"]
