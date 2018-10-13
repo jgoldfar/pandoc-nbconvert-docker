@@ -3,6 +3,7 @@
 [![Docker Build Status](https://img.shields.io/docker/build/jgoldfar/pandoc-docker-bibtex.svg) ![Docker Pulls](https://img.shields.io/docker/pulls/jgoldfar/pandoc-docker-bibtex.svg)](https://hub.docker.com/r/jgoldfar/pandoc-docker-bibtex/)
 
 [Docker](https://www.docker.io/) container for the source distribution of [Pandoc](http://johnmacfarlane.net/pandoc), with Latex tools installed.
+In particular, this image is meant to allow compilation of PDF files directly from TeX, as well as conversion of TeX to other, open formats such as HTML.
 
     docker run jgoldfar/pandoc-docker-bibtex
 
@@ -41,6 +42,11 @@ Generate HTML + MathJaX from a LaTeX file
 $ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex --from latex+raw_tex --to html5 --mathjax fileIn.tex -o fileOut.html
 ```
 
+Generate HTML + MathJaX from a LaTeX file + BibTeX
+```
+$ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex --from latex+raw_tex --to html5 --mathjax fileIn.tex -o fileOut.html --bibliography bibIn.bib
+```
+
 ## Installed Packages
 
 | apt/LaTeX                    | Pandoc                   |
@@ -62,3 +68,5 @@ $ docker run -v `pwd`:/source jgoldfar/pandoc-docker-bibtex --from latex+raw_tex
 | fontconfig                   |                          |
 | texlive-xetex                |                          |
 | imagemagick                  |                          |
+| ghostscript                  |                          |
+| latexmk                      |                          |
