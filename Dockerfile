@@ -19,6 +19,7 @@ RUN apt-get update -y && \
     texlive-bibtex-extra \
     fontconfig \
     lmodern \
+    latexmk \
     imagemagick \
     ghostscript && \
     apt-get autoclean && apt-get --purge --yes autoremove && \
