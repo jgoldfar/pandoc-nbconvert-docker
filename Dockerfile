@@ -11,7 +11,7 @@ RUN apt-get update -y && \
     apt-get autoclean && apt-get --purge --yes autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install nbconvert
+RUN pip3 install nbconvert
 
 # Set CWD to /source on entry.
 # Add -v `pwd`:/source to your run command to make the files in your working
